@@ -17,33 +17,7 @@ export K8S_URL="https://192.168.58.99:6443"
 ./secpod_wrap.py store
 ```
 
-### List images, pods and their owners (Jobs, StatefulSets, Deployments,...)
-
-```bash
-export K8S_TOKEN="..."
-export K8S_URL="https://192.168.58.99:6443"
-
-./secpod_wrap.py images
-```
-
-### List found vulnerabilities
-
-```bash
-export K8S_TOKEN="..."
-export K8S_URL="https://192.168.58.99:6443"
-
-./secpod_wrap.py vulns
-```
-
-### Help
-
-```bash
-./secpod_wrap.py --help
-```
-
-## Example
-
-### Store
+Example
 
 ```bash
 luckysideburn:~/WORK/secpod_wrap$ ./secpod_wrap.py store
@@ -58,7 +32,16 @@ Save record for rancher/klipper-helm:v0.6.4-build20210813
 Images scanning completed
 ```
 
-### List Images
+### List images, pods and their owners (Jobs, StatefulSets, Deployments,...)
+
+```bash
+export K8S_TOKEN="..."
+export K8S_URL="https://192.168.58.99:6443"
+
+./secpod_wrap.py images
+```
+
+Example
 
 ```bash
 luckysideburn:~/WORK/secpod_wrap$ ./secpod_wrap.py images
@@ -84,7 +67,15 @@ luckysideburn:~/WORK/secpod_wrap$ ./secpod_wrap.py images
 ]
 ```
 
-### List Vulns
+### List found vulnerabilities
+
+```bash
+export K8S_TOKEN="..."
+export K8S_URL="https://192.168.58.99:6443"
+
+./secpod_wrap.py vulns
+```
+Example
 
 ```bash
 luckysideburn:~/WORK/secpod_wrap$ ./secpod_wrap.py vulns
@@ -130,4 +121,10 @@ luckysideburn:~/WORK/secpod_wrap$ ./secpod_wrap.py vulns
         }
     ]
 }
+```
+
+### Help
+
+```bash
+./secpod_wrap.py --help
 ```
