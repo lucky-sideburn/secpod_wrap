@@ -223,7 +223,10 @@ def scan(img):
     with open(tmp_file) as json_file:
         data = json.load(json_file)
 
-    for results in data["Results"]:
+    if "Results" in data:
+        data = data["Results"]
+
+    for results in data:
         if "Vulnerabilities" in results:
             for vulns in results["Vulnerabilities"]:
                 vulnid = vuln_dict(vulns.keys(), vulns, "VulnerabilityID")
@@ -251,7 +254,7 @@ if __name__ == '__main__':
         sys.exit(1)
 
     urllib3.disable_warnings()
-    parser = argparse.ArgumentParser(prog='imgradar')
+    parser = argparse.ArgumentParser(prog='secpod_wrap')
 
     sub_parsers = parser.add_subparsers(help='sub-command help')
 
